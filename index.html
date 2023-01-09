@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Practise</title>
+    </head>
+    <body>
+        <script>
+            //JavaScript Functions
+            //arrowFunction
+            const java1 = () => {
+                console.log('Hello JavaScript');
+            };
+            java1();
+            //anonymous function
+            let java2 = function(){
+                console.log('Anonymous function');
+            }
+            java2();
+            //immediate invokable function
+            (function (){
+                console.log("iife function");
+            })();
+            //javascript Loops
+            //for Of loop
+            let dataArray = [
+                {name:"Sandeep",age:22,gender:"Male"},
+                {name:"Anji",age:33,gender:"Male"},
+                {name:"Paramesh",age:34,gender:"Male"},
+            ];
+            const loopData = () => {
+                for(let item of dataArray){
+              console.log(item); 
+            }; 
+            }
+            //forEach loop
+            let dataItems = [
+                {name:"srikanth",age:24,gender:"Male"},
+                {name:"Anil",age:21,gender:"Male"},
+                {name:"sunny",age:23,gender:"male"},
+            ];
+            const loopItem = () => {
+                dataItems.forEach(item => {
+                    console.log(item);
+                });
+            }
+            //javascript ifelse...Statement
+            //if Statment..
+            const number = prompt('enter a number');
+            if(number >=0){
+                console.log("the number is positive");
+            }
+            //if else..Statement
+            const number1 = prompt('enter a number');
+            if(number1 >=0){
+                console.log('the if Statement is true');
+            }else{
+                console.log('the else statement Executes');
+            }
+            //if...else if...statement
+            const book = "Social";
+            if(book=="telugu"){
+                console.log("Telugu Book");
+            }else if(book=="english"){
+                console.log("English Book");
+            }else if(book=="Social"){
+                console.log("Social Book");
+            }else{
+                console.log("unknow Book");
+            }
+            //switch case statement
+            let a = 1;
+            switch(a){
+                case 0 :
+                    a = "zero";
+                    break;
+                case 1 :
+                  a = "one";
+                  break;
+                case 2 :
+                  a = "two";
+                  break;
+                default :
+                 a = "not Found";
+                 break;
+            }
+            console.log(a);
+            //Ternary Operators
+            let marks1 = prompt('enter your marks');
+            let result = (marks1 >= 38)? "pass":"fail";
+            console.log(`you ${result} the exam`);
+            //Array Methods
+            //toString..
+            let arr1 = [1,8,7,9];
+            let convertToString = arr1.toString();
+            console.log(convertToString);
+            //array Join
+            let arr2 = [4,7,2,3];
+            let addSymbol = arr2.join("-");
+            console.log(addSymbol);
+            //array Pop
+            let arr3 = [5,10,15,20];
+            let removeNumber = arr3.pop();
+            console.log(removeNumber);
+            //array Push
+            let arr4 = [20,25,30,35];
+            let addNumber = arr4.push(40);
+            console.log(addNumber);
+            console.log(arr4);
+            //array Unshift
+            let arr5 = ["Apple","Ball","cat","Dog"];
+            let addThing = arr5.unshift("Elephant");
+            console.log(addThing);
+            console.log(arr5);
+            //array Shift
+            let arr6 = ["Television","Cooler","Fan","Fridge"];
+            let removeThing = arr6.shift();
+            console.log(removeThing);
+            console.log(arr6);
+            //array Concat
+            let arr7 = [11,22,33,44];
+            let arr8 = [10,20,30,40];
+            let addThem = arr7.concat(arr8);
+            console.log(addThem);
+            //array Sort
+            let arr9 = [9,10,14,8,6];
+            let addSort = arr9.sort((a,b) => a-b);
+            console.log(addSort);
+            //array splice
+            let arr10 = [22,33,44,52];
+            let removeNum = arr10.splice(2,2,47,40);
+            console.log(removeNum);
+            console.log(arr10);
+            //array Map
+            let arr11 = [22,20,89,75];
+            let arrMap = arr11.map((item) => item * 2);
+            console.log(arrMap);
+            //array filter
+            let arr12 = [25,30,34,38,42,15,10];
+            let arrFilter = arr12.filter((value) => value > 30);
+            console.log(arrFilter);
+            //array reduce
+            let arr13 = [14,24,34,44,54];
+            let arrReduce = arr13.reduce((total,value) => total + value);
+            console.log(arrReduce);
+            //array Every
+            let arr14 = [18,28,38,48,58];
+            let arrEvery = arr14.every((value) => value > 40);
+            console.log(arrEvery);
+            //array Some
+            let arr15 = [7,17,27,37,47,57];
+            let arrSome = arr15.some((index) => index > 20);
+            console.log(arrSome);
+            //array IndexOf
+            let arr16 = ["laptop","Mouse","Monitor","Cpu","HardDisk"];
+            let arrIndex = arr16.indexOf("Cpu");
+            console.log(arrIndex);
+            //javaScript Objects
+            //using dot Notation
+            const obj1 = {
+                name:"sunny",
+                age:23
+            };
+            console.log(obj1.name);
+            //using bracket Notation
+            const obj2 = {
+                name:"Kadari",
+                age:24,
+            };
+            console.log(obj2["name"]);
+            //nested objects
+            const obj3 = {
+                name:"stefen",
+                age:200,
+                marks:{
+                    english:80,
+                    social:96,
+                    maths:88,
+                    physics:90
+                }
+            }
+            console.log(obj3);
+            //Javascript Object Methods
+            const obj4 = {
+                name:"Damon",
+                age:250,
+                greet:function(){
+                    console.log("Hello Stefen");
+                }
+            }
+            obj4.greet();
+            //Json.stringify
+            const obj5 = {
+                name:"Elena",
+                age:18,
+                city:"Mystic Falls"
+            };
+            let myString = JSON.stringify(obj5);
+            console.log(myString);
+            //javascript Object accessors
+            //javascript getter method
+            const obj6 = {
+                firstName:"bonnie",
+                age:19,
+
+                get getName(){
+                    return this.firstName;
+                }
+            };
+            console.log(obj6.getName);
+            //javascript setter method
+            const obj7 = {
+                firstName:"tyler",
+                age:19,
+                set changeName(newName){
+                    return this.firstName = newName;
+                }
+            };
+            console.log(obj7.firstName);
+            let changeValue = obj7.changeName = "Abby";
+            console.log(changeValue);
+            //javascript Object define Property
+            const obj8 = {
+                firstName:"Jenna",
+                age:29,
+            }
+            Object.defineProperty(obj8,"getName",{
+                get:function(){
+                    return this.firstName;
+                }
+            });
+            Object.defineProperty(obj8,"changeName",{
+                set:function (value){
+                    this.firstName = value;
+                }
+            });            
+            console.log(obj8.firstName);
+            let objPoperty = obj8.changeName = "caraloine";
+            console.log(objPoperty);
+            //javascript Constructor Functions
+            function Person (){
+                this.name="sunnny",
+                this.age=22
+            };
+            const person1 = new Person();
+            console.log(person1);
+            //create multiple Objects with the constructor function
+            function Student (){
+                this.name="Sandeep",
+                this.age=23
+            };
+            const student1 = new Student();
+            const student2 = new Student();
+            console.log(student1);
+            console.log(student2);
+            //constructor function parameters
+            function Details (first,last,age,area){
+              this.firstName=first;
+              this.lastName=last;
+              this.age=age;
+              this.address=area;
+            };
+            let details1 = new Details('sunny','Sandeep',22,"Film nagar","English");
+            let details2 = new Details('Gunti','Anji',33,'Dargha');
+            let details3 = new Details('Paka','Paramesh',34,'Manikonda');
+            console.log(details1);
+            console.log(details2);
+            console.log(details3);
+            //how to create a map
+            //map .set
+            const fruits = new Map();
+            fruits.set("Apple",500);
+            fruits.set("Kiwi",900);
+            fruits.set("banana",150);
+            fruits.set("Orange",200)
+            console.log(fruits.get("Apple"));
+            //set method can also change the existing Map Values
+            const fruits1 = new Map([
+                ["apple",400],
+                ["mango",350],
+                ["grapes",140],
+                ["kiwi",480],
+            ]);
+            fruits1.set("apple",800),
+            console.log(fruits1);
+            console.log(fruits1.size);
+            console.log(fruits1.has("coconut"));
+            console.log(typeof fruits1);
+        </script>
+        <button type="button" onclick="loopData()">forOf</button>
+        <button type="button" onclick="loopItem()">forEach</button>
+    </body>
+</html>
