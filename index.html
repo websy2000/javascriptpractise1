@@ -285,6 +285,204 @@
             console.log(fruits1.size);
             console.log(fruits1.has("coconut"));
             console.log(typeof fruits1);
+            //javascript Es6..
+            //Arrow function
+            //arrow function with no arguments
+            let greet1 = () => console.log("Hello");
+            greet1();
+            //Arrow function as an Expression
+            let age1 = 16;
+            let welcome = (age1 < 15)?
+            () => console.log('baby'):
+            () => console.log('adult');
+            welcome();
+            //javascript default parameters
+            function sum (x=3,y=5){
+                return x + y;
+            }
+            console.log(sum(15,10));
+            //using Expression as default value
+            function sum1 (x=2,y=x,z=x+y){
+                console.log(x+y+z);
+            }
+            sum1();
+            //javascript Map
+            //creating javascript map
+            const map1 = new Map();
+            console.log(map1)
+            //insert item to map
+            let map2 = new Map()
+            map2.set('info',{name:"Sunny",age:22});
+            console.log(map2.get('info'));
+            //check map elements
+            const map3 = new Map();
+            map3.set('obj',{name:"Sandeep",age:23});
+            console.log(map3.has('obj'));
+            //Removing elements
+            const map4 = new Map();
+            map4.set('len',{name:"Anji",age:33});
+            map4.clear('len');
+            console.log(map4);
+            //iterate through map
+            const map5 = new Map();
+            map5.set('name','sandeep');
+            map5.set('age','22');
+            for(let [key,value]of map5){
+                console.log(key + '-' + value);
+            }
+            //iterate over Map Keys
+            const map6 = new Map();
+            map6.set('name','Anji');
+            map6.set('age',33);
+            for(let key of map6.keys()){
+                console.log(key);
+            }
+            //iterable through values
+            const map7 = new Map();
+            map7.set('name','Anji');
+            map7.set('age','33');
+            for(let value of map7.values()){
+                console.log(value);
+            }
+            //javascript destructuring
+            const destructure = {
+                name:"Sunny",
+                age:22,
+                gender:"Male",
+            }
+            const {name,age,gender} = destructure;
+            console.log(age);
+            console.log(name);
+            console.log(gender);
+            //Array destructuring
+            const arrayValue = ["one","two","three"];
+            const [x,y,z] = arrayValue;
+            console.log(y);
+            console.log(z);
+            console.log(x);
+            //Assign Default value
+            const arrayDefault = [10,52];
+            const [s =5 ,n=9] = arrayDefault;
+            console.log(n);
+            //swapping variables
+            let q = 10;
+            let w = 25;
+            [q,w] = [w,q];
+            console.log(q);
+            console.log(w);
+            //skip items
+            const arraySkipItems = ['one','two','three'];
+            const [b,,c] = arraySkipItems ;
+            console.log(b);
+            console.log(c);
+            //Assign remaining elements to a single Variable
+            const singleLine = ["cap","Bottle","purse","table","book"];
+            const [g,...r] = singleLine;
+            console.log(g);
+            console.log(r);
+            //Javascript Classes
+            //creating javascript class
+            class People {
+            constructor(name){
+                this.name;
+            }
+            }
+            //javaScript class Method
+            class People1 {
+                constructor(name){
+                    this.name = name;
+                }
+                greet(){
+                    console.log('hwllo ${this.name}');
+                }
+            }
+            let people2 = new People1 ("sandy");
+            console.log(people2);
+            //getter & setter
+            class People3{
+                constructor(name){
+                    this.name = name;
+                }
+                get peopleName(){
+                  return this.name;
+                }
+                set peopleName(x){
+                    this.name = x;
+                }
+            }
+            let people4 = new People3 ('Elena');
+            console.log(people4.name);
+            people4.peopleName = "Stefen";
+            console.log(people4.name);
+            //javascript class inheritance
+            class Person2 {
+                constructor(name){
+                    this.name = name;
+                }
+                greet(){
+                    console.log(`hello ${this.name}`);
+                }
+            }
+            class Student3 extends Person2 {
+            }
+            let student4 = new Student3('Damon');
+            student4.greet();
+            //javascript  LocalStorage
+            //storing Object
+            const settings = {
+                background_color:"#fff",
+                color:"#d4d4d4",
+                theme:"light"
+            };
+            localStorage.setItem('settings',JSON.stringify(settings));
+            console.log(localStorage.getItem(settings));
+            let storeSettings = JSON.parse(localStorage.getItem('settings'));
+            console.log(storeSettings);
+            //session storage
+            window.sessionStorage
+            sessionStorage.setItem('mode','dark');
+            const mode = sessionStorage.getItem("mode");
+            console.log(mode);
+            //callback Function
+            function greet(name,callback){
+                console.log('hi' +' ' + name);
+                callback();
+            }
+            function callMe(){
+                console.log('iam callback function');
+            }
+            greet('sunny',callMe);
+            //setTime out method
+            function greet(){
+                console.log('hello Java');
+            }
+            function sayName(name){
+                console.log('Hi'+' ' +name);
+            }
+            setTimeout(greet,2000);
+            sayName('bonnie');
+            //javascript asynchronous
+            function greet(){
+                console.log('hello world');
+            }
+            setTimeout(greet,3000);
+            console.log('This message is showm first');
+            //javascript setInterval
+           /* function greet(){
+                console.log('hello World');
+            }
+            setInterval(greet,1000);*/
+            //use clearInterval Method
+            let count =0;
+            let interval = setInterval(function(){
+                count +=1;
+                if(count === 5){
+                    clearInterval(interval);
+                }
+                let dateTime = new Date();
+                let time = dateTime.toLocaleTimeString();
+                console.log(time);
+            },2000);
         </script>
         <button type="button" onclick="loopData()">forOf</button>
         <button type="button" onclick="loopItem()">forEach</button>
