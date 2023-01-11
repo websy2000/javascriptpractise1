@@ -483,6 +483,143 @@
                 let time = dateTime.toLocaleTimeString();
                 console.log(time);
             },2000);
+            //Javascript 
+            //  1) How to merge the properties and methods of two objects in javascript....
+            const personalDetails = {
+                name:"Anvith",
+                age:25,
+            };
+            const workDetails = {
+                salary:45000,
+                joinedDate:"3rd january 2023",
+            };
+            const joinBoth = {...personalDetails,...workDetails};
+            console.log(joinBoth);
+            //2) How to check if a Specific value or an element is present in an array in javascript...
+            const nums = [100,200,300,400];
+            let check  = nums.includes(300);
+            console.log(check);
+            //3) How to make the first letter in a string into a capital letter in javascript...
+            const str = "hello javascript";
+            const firstletterCapitalise = str[0].toUpperCase() + str.slice(1);
+            console.log(firstletterCapitalise);
+            // 4)  How to convert a set to an array in javascript...
+            const uniqueNumbers = new Set();
+            uniqueNumbers.add(2019);
+            uniqueNumbers.add(2020);
+            uniqueNumbers.add(2021);
+            uniqueNumbers.add(2022);
+            let uniqueNumbersArr = Array.from(uniqueNumbers);
+            console.log(uniqueNumbersArr);
+            // 5) How to convert a Map to an Array in javascript...
+            const rollNumToName = new Map();
+            rollNumToName.set(1,'Stefen').set(2,'Elena');
+            const rollNumArr = Array.from(rollNumToName);
+            console.log(rollNumArr);
+            // 6) How to change or add text to the browser tab using javascript...
+            document.title = "Home";
+            // 7)How to get only current month number using javascript...
+            const currentDate = new Date();
+            const monthNumber = currentDate.getMonth();
+            console.log(monthNumber);
+            // 8) How to get current year using javascript...
+            const currentDate1 = new Date();
+            const year = currentDate1.getFullYear();
+            console.log(year);
+            // 9) How to get only the current date number using javascript...
+            const currentDate2 = new Date();
+            const dateNumber = currentDate2.getDate();
+            console.log(dateNumber);
+            // 10) How to convert each character in the string to an array using the object.assign()...
+            const str1 = "Hello";
+            const strArr = Object.assign([],str1);
+            console.log(strArr);
+            // 11) How to convert each character in the string to an array using the array.from() methods in javascript...
+            const str2 = "Hello Sunny";
+            const strFrom = Array.from(str2);
+            console.log(strFrom);
+            // 12) How to convert each character in the string to an array using the spread operator...
+            const str3 = "English Learner";
+            const strSpread = [...str3];
+            console.log(strSpread);
+            // 13) How to convert a number into an array in javascript...
+            const num = 123456;
+            const numsArr = Array.from(String(num),Number);
+            console.log(numsArr);
+            // 14) How to execute an array of functions in javascript...
+            function greetPeople(){
+                console.log("Hello People");
+            }
+            function fristName(){
+                console.log("Sunny");
+            }
+            function lastName(){
+                console.log("Sandeep");
+            }
+            const funcArr = [greetPeople,fristName,lastName];
+            funcArr.forEach((func) => {
+                func();
+            });
+            // 15) How to get the index of an object from an array of objects in javascript...
+            const objArr = [
+                {name:"Sunny Sandeep",age:22},
+                {name:"Gunti Anji",age:33}
+            ];
+            const objIndex = objArr.findIndex((obj) =>{
+                if(obj.name==="Gunti Anji"){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            console.log(objIndex);
+            // 16) How to deep clone or copy an array of Object using the Json.stringify method in javascript...
+            const objArr1 = [
+                {name:"Stefen salvator"},
+                {name:"Damon salvator"},
+            ];
+            const objArrStr = JSON.stringify(objArr1);
+            const objArrCopy = JSON.parse(objArrStr);
+            console.log(objArrCopy);
+            // 17) How to check if an object is empty in javascript...
+            const emptyObj = {};
+            const numberOfEmptyObj = Object.keys(emptyObj).lenght;
+            if(emptyObj&numberOfEmptyObj){
+                console.log("obj is not empty");
+            }else{
+                console.log("obj is empty");
+            }
+            // 18) How to set default values for function parameters in javascript...
+            function greetPerson(name = "Anonymous user"){
+                console.log(`Hello ${name}`);
+            }
+            greetPerson();
+            // 19) How to remove duplicate elements from an array of objects in javascript...
+            const uniqueValueSet = new Set();
+            const arr =[
+                {name:"Robin"},
+                {name:"Damon"},
+                {name:"Robin"},
+                {name:"Stefen"},
+                {name:"Damon"},
+            ];
+            const filterArr = arr.filter((obj) => {
+            const isPresentInSet = uniqueValueSet.has(obj.name);
+            uniqueValueSet.add(obj.name);
+            return !isPresentInSet;
+            });
+            console.log(filterArr); 
+            // 20) How to remove properties from an object using destructuring and rest parameter in javascript...
+            const john = {
+                name:"Stefen salvator",
+                age:163,
+                salary:500000,
+                occupation:"vampire",
+                address:"Mystic Falls",
+            };
+            const{salary,...allOtherProperties} = john;
+            console.log(allOtherProperties);
+
         </script>
         <button type="button" onclick="loopData()">forOf</button>
         <button type="button" onclick="loopItem()">forEach</button>
